@@ -3,56 +3,83 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#081b36">
-  <meta name="description" content="Deals, coupons and offers from DISCOUNTWORLD360">
+  <meta name="theme-color" content="#071a33">
+  <meta name="description" content="DISCOUNTWORLD360 — discover deals, coupons, rewards and useful updates.">
   <title>DISCOUNTWORLD360</title>
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="icon" href="./icon-192.png">
   <style>
-    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#081b36;color:#fff}
-    header{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #29415e}
-    .brand{font-weight:800;letter-spacing:.5px;color:#f5c542;font-size:20px}.tag{font-size:11px;color:#9fb2ca;margin-top:4px}
-    .live{font-size:11px;background:#163d36;color:#8ff0c0;padding:7px 10px;border-radius:20px}
-    main{max-width:760px;margin:8vh auto;padding:24px;text-align:center}
-    .logo{width:104px;height:104px;margin:0 auto 22px;border:2px solid #f5c542;border-radius:26px;display:grid;place-items:center;color:#f5c542;font-size:34px;font-weight:900}
-    h1{font-size:clamp(27px,6vw,42px);margin:0 0 12px} p{color:#c3d0df;line-height:1.6}
-    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:26px 0}
-    a,button{border:0;border-radius:12px;padding:14px 20px;font-weight:700;text-decoration:none;font-size:15px;cursor:pointer}
-    .primary{background:#f5c542;color:#081b36}.secondary{background:#173453;color:#fff;border:1px solid #45617e}
-    #install{display:none}.note{font-size:12px;color:#9fb2ca;margin-top:22px}
-    footer{text-align:center;color:#8298b3;font-size:12px;padding:24px}
+    :root{--navy:#071a33;--panel:#102b4d;--gold:#f6c744;--muted:#b9c9dc;--line:#294666}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(ellipse at 50% -10%,#1c4269 0,var(--navy) 55%);color:#fff;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+    .wrap{max-width:760px;margin:auto;padding:18px 16px 34px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 2px 18px;border-bottom:1px solid var(--line)}
+    .brand{font-weight:900;letter-spacing:.5px;color:var(--gold);font-size:19px}
+    .sub{font-size:11px;color:var(--muted);letter-spacing:1.4px;margin-top:5px}
+    .pill{font-size:10px;color:#9ff0c6;background:#153d38;border:1px solid #286c5c;border-radius:30px;padding:7px 10px;white-space:nowrap}
+    .hero{text-align:center;padding:34px 12px 22px}
+    .appicon{width:88px;height:88px;margin:0 auto 18px;border:2px solid var(--gold);border-radius:25px;display:grid;place-content:center;background:#0b2544;box-shadow:0 12px 32px #0005;color:var(--gold);font-weight:900;font-size:29px;line-height:1.05}
+    .appicon span{display:block;text-align:center;font-size:15px;color:white;margin-top:4px}
+    h1{font-size:clamp(27px,7vw,39px);margin:0 0 10px;letter-spacing:-.7px}
+    .hero p{max-width:510px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.6}
+    .actions{display:grid;grid-template-columns:1fr;gap:11px;max-width:430px;margin:23px auto 0}
+    a.btn,button.btn{display:flex;justify-content:center;align-items:center;gap:9px;text-decoration:none;border:0;border-radius:13px;padding:15px 18px;font-weight:800;font-size:15px;cursor:pointer}
+    .primary{background:var(--gold);color:#10213a}
+    .secondary{background:#173657;color:#fff;border:1px solid #3a5d80!important}
+    #install{display:none}
+    .section-title{font-size:15px;margin:28px 2px 12px;color:#fff}
+    .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .tile{background:linear-gradient(145deg,#143657,#0d2542);border:1px solid var(--line);border-radius:15px;padding:16px 14px;min-height:104px;text-decoration:none;color:#fff}
+    .tile .emoji{font-size:23px;display:block;margin-bottom:9px}
+    .tile strong{font-size:14px;display:block}
+    .tile small{display:block;color:var(--muted);font-size:11px;line-height:1.4;margin-top:5px}
+    .info{margin-top:18px;padding:14px;border:1px solid var(--line);border-radius:14px;color:var(--muted);font-size:12px;line-height:1.55;background:#0b2340}
+    footer{text-align:center;color:#8098b5;font-size:11px;padding:24px 8px 0}
+    @media(min-width:560px){.actions{grid-template-columns:1fr 1fr}.tiles{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
 <body>
-<header><div><div class="brand">🔥 DISCOUNTWORLD360</div><div class="tag">DEALS • COUPONS • OFFERS</div></div><span class="live">● ONLINE</span></header>
-<main>
-  <div class="logo">DW<br><small style="font-size:17px">360</small></div>
-  <h1>Your deals destination</h1>
-  <p>Discover the latest deals, coupons and offers on DISCOUNTWORLD360. Install this app on your device for quick access.</p>
-  <div class="actions">
-    <a class="primary" href="https://discountworld360.blogspot.com/" target="_blank" rel="noopener">Open Website</a>
-    <button class="secondary" id="install">Install App</button>
-  </div>
-  <p class="note">Installation is free. An internet connection is required to browse the latest website content.</p>
-</main>
-<footer>© DISCOUNTWORLD360</footer>
+<div class="wrap">
+  <header>
+    <div><div class="brand">🔥 DISCOUNTWORLD360</div><div class="sub">DEALS • COUPONS • REWARDS</div></div>
+    <span class="pill">● YOUR DAILY DEAL HUB</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="appicon">DW<span>360</span></div>
+      <h1>More value in every visit.</h1>
+      <p>Explore the latest deals, coupons, rewards and updates from DISCOUNTWORLD360 — all in one place.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://discountworld360.blogspot.com/">🌐 Open DISCOUNTWORLD360</a>
+        <button class="btn secondary" id="install">⬇ Install App</button>
+      </div>
+    </section>
+    <h2 class="section-title">Explore DISCOUNTWORLD360</h2>
+    <div class="tiles">
+      <a class="tile" href="https://discountworld360.blogspot.com/"><span class="emoji">🔥</span><strong>Latest Deals & Offers</strong><small>Visit the website for current offers</small></a>
+      <a class="tile" href="https://whatsapp.com/channel/0029Vb8gPPUJP219W3Z72y0v"><span class="emoji">💬</span><strong>WhatsApp Channel</strong><small>Follow updates and new deals</small></a>
+    </div>
+    <div class="info">Tip: Install this app on your phone or computer for quick access. An internet connection is needed to view the latest website content.</div>
+  </main>
+  <footer>© DISCOUNTWORLD360 · Made for deal hunters</footer>
+</div>
 <script>
   if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(console.error));
+    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(err => console.log("Service worker:", err)));
   }
-  let deferredPrompt;
+  let installPrompt;
   const installButton = document.getElementById("install");
-  window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault(); deferredPrompt = event; installButton.style.display = "inline-block";
+  window.addEventListener("beforeinstallprompt", event => {
+    event.preventDefault(); installPrompt = event; installButton.style.display = "flex";
   });
   installButton.addEventListener("click", async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null;
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    await installPrompt.userChoice;
+    installPrompt = null;
     installButton.style.display = "none";
   });
-  window.addEventListener("appinstalled", () => {
-    installButton.style.display = "none";
-  });
+  window.addEventListener("appinstalled", () => installButton.style.display = "none");
 </script>
 </body>
 </html>
